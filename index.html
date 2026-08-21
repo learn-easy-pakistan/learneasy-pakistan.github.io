@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnEasy Pakistan | Free Student Learning</title>
+<meta name="description" content="Free educational notes, math practice, English learning, Urdu lessons, MCQs and worksheets for students.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
+header{background:#173b72;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:700}
+nav a{color:white;text-decoration:none;margin:0 8px;font-size:14px}
+.hero{padding:70px 7%;text-align:center;background:linear-gradient(135deg,#e9f2ff,#ffffff)}
+.hero h1{font-size:42px;margin-bottom:12px}
+.hero p{max-width:650px;margin:auto;color:#526078}
+.search{margin:25px auto 0;max-width:600px;display:flex}
+.search input{flex:1;padding:14px;border:1px solid #ccd5e3;border-radius:10px 0 0 10px;font-size:16px}
+.search button{padding:14px 22px;border:0;background:#173b72;color:#fff;border-radius:0 10px 10px 0}
+section{padding:45px 7%;max-width:1200px;margin:auto}
+h2{text-align:center;margin-bottom:28px;font-size:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{background:white;padding:24px;border-radius:16px;box-shadow:0 5px 20px #17203312;border:1px solid #e5eaf2}
+.card h3{margin:10px 0}
+.card p{color:#657086;font-size:14px}
+.card a{display:inline-block;margin-top:14px;color:#173b72;font-weight:700;text-decoration:none}
+.icon{font-size:34px}
+.about{background:white;border-radius:18px;padding:30px;box-shadow:0 5px 20px #17203312}
+footer{margin-top:30px;background:#132b50;color:white;text-align:center;padding:30px 7%}
+.small{font-size:13px;color:#aebbd0;margin-top:8px}
+@media(max-width:600px){.hero h1{font-size:32px}nav{width:100%}.search input{width:60%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">📚 LearnEasy Pakistan</div>
+  <nav>
+    <a href="#home">Home</a><a href="#subjects">Subjects</a><a href="#resources">Resources</a><a href="#about">About</a>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <h1>Learn Easily. Practice Daily. Improve.</h1>
+  <p>Free and simple educational resources for students: Math, English, Urdu, MCQs and printable worksheets.</p>
+  <div class="search">
+    <input id="searchBox" type="text" placeholder="Search a topic...">
+    <button onclick="searchCards()">Search</button>
+  </div>
+</section>
+
+<section id="subjects">
+<h2>📖 Subjects</h2>
+<div class="grid" id="cards">
+  <article class="card"><div class="icon">➗</div><h3>Mathematics</h3><p>Fractions, division, multiplication, prime factors and more.</p><a href="#">Explore Math →</a></article>
+  <article class="card"><div class="icon">🇬🇧</div><h3>English</h3><p>Vocabulary, grammar, meanings, translation and practice.</p><a href="#">Learn English →</a></article>
+  <article class="card"><div class="icon">📖</div><h3>Urdu</h3><p>Easy meanings, summaries, questions and lesson explanations.</p><a href="#">Study Urdu →</a></article>
+  <article class="card"><div class="icon">📝</div><h3>MCQs</h3><p>Practice questions for revision and exam preparation.</p><a href="#">Practice MCQs →</a></article>
+</div>
+</section>
+
+<section id="resources">
+<h2>🎯 Free Resources</h2>
+<div class="grid">
+  <article class="card"><div class="icon">📄</div><h3>Worksheets</h3><p>Simple practice sheets that students can use for revision.</p><a href="#">View Worksheets →</a></article>
+  <article class="card"><div class="icon">🎓</div><h3>Exam Preparation</h3><p>Topic-wise revision material and practice questions.</p><a href="#">Start Revision →</a></article>
+  <article class="card"><div class="icon">🔢</div><h3>Quick Lessons</h3><p>Short explanations for difficult school topics.</p><a href="#">View Lessons →</a></article>
+</div>
+</section>
+
+<section id="about">
+<h2>About LearnEasy Pakistan</h2>
+<div class="about">
+<p>LearnEasy Pakistan is a simple educational website concept designed to make school learning easier and more accessible. The site can grow with original notes, explanations, quizzes and worksheets.</p>
+</div>
+</section>
+</main>
+
+<footer>
+  <strong>LearnEasy Pakistan</strong>
+  <div class="small">Educational content for learning and practice.</div>
+</footer>
+
+<script>
+function searchCards(){
+  const q=document.getElementById('searchBox').value.trim().toLowerCase();
+  const cards=document.querySelectorAll('#cards .card');
+  if(!q){cards.forEach(c=>c.style.display='block');return;}
+  cards.forEach(c=>{
+    c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none';
+  });
+}
+</script>
+</body>
+</html>
