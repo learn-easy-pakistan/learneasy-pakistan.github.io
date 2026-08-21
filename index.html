@@ -1,95 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LearnEasy Pakistan | Free Student Learning</title>
-<meta name="description" content="Free educational notes, math practice, English learning, Urdu lessons, MCQs and worksheets for students.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnEasy Pakistan | Free Education</title>
+<meta name="description" content="Free original lessons, MCQs and worksheets for students.">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
-header{background:#173b72;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.logo{font-size:24px;font-weight:700}
-nav a{color:white;text-decoration:none;margin:0 8px;font-size:14px}
-.hero{padding:70px 7%;text-align:center;background:linear-gradient(135deg,#e9f2ff,#ffffff)}
-.hero h1{font-size:42px;margin-bottom:12px}
-.hero p{max-width:650px;margin:auto;color:#526078}
-.search{margin:25px auto 0;max-width:600px;display:flex}
-.search input{flex:1;padding:14px;border:1px solid #ccd5e3;border-radius:10px 0 0 10px;font-size:16px}
-.search button{padding:14px 22px;border:0;background:#173b72;color:#fff;border-radius:0 10px 10px 0}
-section{padding:45px 7%;max-width:1200px;margin:auto}
-h2{text-align:center;margin-bottom:28px;font-size:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.card{background:white;padding:24px;border-radius:16px;box-shadow:0 5px 20px #17203312;border:1px solid #e5eaf2}
-.card h3{margin:10px 0}
-.card p{color:#657086;font-size:14px}
-.card a{display:inline-block;margin-top:14px;color:#173b72;font-weight:700;text-decoration:none}
-.icon{font-size:34px}
-.about{background:white;border-radius:18px;padding:30px;box-shadow:0 5px 20px #17203312}
-footer{margin-top:30px;background:#132b50;color:white;text-align:center;padding:30px 7%}
-.small{font-size:13px;color:#aebbd0;margin-top:8px}
-@media(max-width:600px){.hero h1{font-size:32px}nav{width:100%}.search input{width:60%}}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
+header{background:#173b72;color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:22px}nav a{color:#fff;text-decoration:none;margin:0 7px;font-size:14px}
+.hero{text-align:center;padding:55px 6%;background:#eaf2ff}.hero h1{font-size:40px;margin:0 0 8px}.hero p{max-width:680px;margin:auto;color:#526078}
+.search{max-width:650px;margin:22px auto;display:flex}.search input{flex:1;padding:13px;border:1px solid #ccd5e3;border-radius:10px 0 0 10px;font-size:16px}.search button{border:0;background:#173b72;color:#fff;padding:13px 20px;border-radius:0 10px 10px 0}
+section{max-width:1150px;margin:auto;padding:42px 6%}h2{text-align:center;font-size:29px;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}.card{background:#fff;border:1px solid #e3e8f0;border-radius:15px;padding:22px;box-shadow:0 4px 16px #17203312}.card h3{margin:7px 0}.card p{color:#657086;font-size:14px}.tag{display:inline-block;background:#edf3ff;color:#173b72;padding:4px 9px;border-radius:20px;font-size:12px}
+.answer{background:#f8fafc;padding:12px;border-left:4px solid #173b72}
+footer{background:#132b50;color:#fff;text-align:center;padding:28px 6%}.muted{color:#aebbd0;font-size:13px}
+@media(max-width:600px){.hero h1{font-size:31px}nav{width:100%}}
 </style>
 </head>
 <body>
-<header>
-  <div class="logo">📚 LearnEasy Pakistan</div>
-  <nav>
-    <a href="#home">Home</a><a href="#subjects">Subjects</a><a href="#resources">Resources</a><a href="#about">About</a>
-  </nav>
-</header>
+<header><div class="logo">📚 LearnEasy Pakistan</div>
+<nav><a href="#home">Home</a><a href="#lessons">Lessons</a><a href="#mcqs">MCQs</a><a href="#worksheets">Worksheets</a></nav></header>
 
-<main id="home">
-<section class="hero">
-  <h1>Learn Easily. Practice Daily. Improve.</h1>
-  <p>Free and simple educational resources for students: Math, English, Urdu, MCQs and printable worksheets.</p>
-  <div class="search">
-    <input id="searchBox" type="text" placeholder="Search a topic...">
-    <button onclick="searchCards()">Search</button>
-  </div>
+<section class="hero" id="home">
+<h1>Learn Easily. Practice Daily.</h1>
+<p>Free, simple educational lessons and practice material for students.</p>
+<div class="search"><input id="search" placeholder="Search Math, English, Urdu..."><button onclick="findContent()">Search</button></div>
 </section>
 
-<section id="subjects">
-<h2>📖 Subjects</h2>
-<div class="grid" id="cards">
-  <article class="card"><div class="icon">➗</div><h3>Mathematics</h3><p>Fractions, division, multiplication, prime factors and more.</p><a href="#">Explore Math →</a></article>
-  <article class="card"><div class="icon">🇬🇧</div><h3>English</h3><p>Vocabulary, grammar, meanings, translation and practice.</p><a href="#">Learn English →</a></article>
-  <article class="card"><div class="icon">📖</div><h3>Urdu</h3><p>Easy meanings, summaries, questions and lesson explanations.</p><a href="#">Study Urdu →</a></article>
-  <article class="card"><div class="icon">📝</div><h3>MCQs</h3><p>Practice questions for revision and exam preparation.</p><a href="#">Practice MCQs →</a></article>
+<section id="lessons">
+<h2>📚 Featured Lessons</h2>
+<div class="grid" id="content">
+<article class="card"><span class="tag">Math</span><h3>Prime Factor</h3><p>A prime factor is a prime number that divides another number exactly.</p><div class="answer"><b>Example:</b> 12 = 2 × 2 × 3, so its prime factors are 2 and 3.</div></article>
+<article class="card"><span class="tag">Math</span><h3>Quotient & Remainder</h3><p>In division, the quotient is the answer and the remainder is what is left over.</p><div class="answer"><b>Example:</b> 17 ÷ 5 = 3 remainder 2.</div></article>
+<article class="card"><span class="tag">Math</span><h3>Fractions</h3><p>A fraction represents a part of a whole. The top number is the numerator and the bottom number is the denominator.</p></article>
+<article class="card"><span class="tag">Units</span><h3>Meter to Centimeter</h3><p>1 meter = 100 centimeters.</p><div class="answer"><b>Example:</b> 3 m = 300 cm.</div></article>
+<article class="card"><span class="tag">English</span><h3>Everyday English Vocabulary</h3><p>Useful words: tiny = very small, quickly = fast, grow = become bigger.</p></article>
+<article class="card"><span class="tag">Urdu</span><h3>آسان اردو معنی</h3><p>پیروکار = کسی کی پیروی کرنے والا۔ پیروی = کسی کے نقشِ قدم پر چلنا۔</p></article>
 </div>
 </section>
 
-<section id="resources">
-<h2>🎯 Free Resources</h2>
+<section id="mcqs">
+<h2>📝 Practice MCQs</h2>
 <div class="grid">
-  <article class="card"><div class="icon">📄</div><h3>Worksheets</h3><p>Simple practice sheets that students can use for revision.</p><a href="#">View Worksheets →</a></article>
-  <article class="card"><div class="icon">🎓</div><h3>Exam Preparation</h3><p>Topic-wise revision material and practice questions.</p><a href="#">Start Revision →</a></article>
-  <article class="card"><div class="icon">🔢</div><h3>Quick Lessons</h3><p>Short explanations for difficult school topics.</p><a href="#">View Lessons →</a></article>
+<div class="card"><h3>1. 1 meter equals:</h3><p>A) 10 cm &nbsp; B) 100 cm &nbsp; C) 1000 cm</p><b>Answer: B</b></div>
+<div class="card"><h3>2. Which is a prime number?</h3><p>A) 9 &nbsp; B) 12 &nbsp; C) 7</p><b>Answer: C</b></div>
+<div class="card"><h3>3. In 17 ÷ 5, the remainder is:</h3><p>A) 1 &nbsp; B) 2 &nbsp; C) 3</p><b>Answer: B</b></div>
 </div>
 </section>
 
-<section id="about">
-<h2>About LearnEasy Pakistan</h2>
-<div class="about">
-<p>LearnEasy Pakistan is a simple educational website concept designed to make school learning easier and more accessible. The site can grow with original notes, explanations, quizzes and worksheets.</p>
+<section id="worksheets">
+<h2>📄 Worksheets</h2>
+<div class="grid">
+<div class="card"><h3>Math Practice</h3><p>Try: 24 ÷ 6, 35 ÷ 5, 18 + 27, 9 × 7.</p></div>
+<div class="card"><h3>English Practice</h3><p>Write the Urdu meanings of: tiny, quickly, grow, shape, leaves.</p></div>
+<div class="card"><h3>Unit Conversion</h3><p>Convert: 2 m, 5 m and 10 m into centimeters.</p></div>
 </div>
 </section>
-</main>
 
-<footer>
-  <strong>LearnEasy Pakistan</strong>
-  <div class="small">Educational content for learning and practice.</div>
-</footer>
-
+<footer><b>LearnEasy Pakistan</b><div class="muted">Original educational practice content.</div></footer>
 <script>
-function searchCards(){
-  const q=document.getElementById('searchBox').value.trim().toLowerCase();
-  const cards=document.querySelectorAll('#cards .card');
-  if(!q){cards.forEach(c=>c.style.display='block');return;}
-  cards.forEach(c=>{
-    c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none';
-  });
+function findContent(){
+ const q=document.getElementById('search').value.toLowerCase().trim();
+ document.querySelectorAll('#content .card').forEach(c=>c.style.display=(!q||c.innerText.toLowerCase().includes(q))?'block':'none');
+ if(q) document.getElementById('lessons').scrollIntoView({behavior:'smooth'});
 }
 </script>
-</body>
-</html>
+</body></html>
